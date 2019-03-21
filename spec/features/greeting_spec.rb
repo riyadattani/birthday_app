@@ -28,6 +28,19 @@ feature 'ask for birthday' do
     fill_in :day, with: day
     select month, from: "month"
     click_button 'Go'
-    expect(page).to have_content "HAPPY BIRTHDAY Riya!!!"
+    expect(page).to have_content "Happy Birthday Riya!!!"
+  end
+
+  scenario "countdown if birthday is not today" do
+    time = Time.new
+    day = time.day + 5
+    month = time.strftime "%B"
+
+    visit '/'
+    fill_in :name, with: 'Riya'
+    fill_in :day, with: day
+    select month, from: "month"
+    click_button 'Go'
+    expect(page).to have_content "Your birthday will be in 5 day(s), Riya."
   end
 end

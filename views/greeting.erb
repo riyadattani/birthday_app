@@ -1,1 +1,5 @@
-<p>HAPPY BIRTHDAY <%=@name%>!!!</p>
+<% if @countdown < 0 %>
+<p>Happy Birthday <%=@name%>!!!</p>
+<% else %>
+<p>Your birthday will be in <%= @countdown.ceil %> day(s), <%=@name%>.</p>
+<% end %>
