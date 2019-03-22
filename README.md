@@ -5,7 +5,7 @@ The instructions for building this app can be found [here](https://github.com/ma
 # Approach
 
 1. First I set up the environment required:
-* Web app framework: Synatra
+* Web app framework: Sinatra
 * Test framework: Capybara
 * Middleware: Shotgun
 
