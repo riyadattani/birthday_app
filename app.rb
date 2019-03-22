@@ -22,14 +22,10 @@ class Birthday < Sinatra::Base
     @month = session[:month]
     @now = Time.new
     @date_input = Time.new(2019,@month,@day)
-    #countdown in days
-    p @date_input
     @countdown = (@date_input - @now)/(60*60*24)
-    # if @coundown < 0
-    #   @countdown += 365
-    # end
-    p @coundown
+    if @countdown < 0
+      @countdown += 365
+    end
     erb :greeting
   end
-
 end

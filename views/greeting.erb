@@ -1,5 +1,24 @@
-<% if @countdown < 0 %>
-<p>Happy Birthday <%=@name%>!!!</p>
+<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+<style>
+   body {
+    color: gold;
+    background-color: LightSalmon;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Bree Serif', serif;
+  }
+</style>
+
+
+<% if @countdown.ceil == 365 %>
+  <br>
+  <p>Happy Birthday <%=@name.capitalize%>!!!</p>
+  <br>
+  <a href="#"><img src="https://media.giphy.com/media/xT0BKqhdlKCxCNsVTq/giphy.gif" alt="Have a brilliant day"></a>
 <% else %>
-<p>Your birthday will be in <%= @countdown.ceil %> day(s), <%=@name%>.</p>
+  <br>
+  <br>
+  <a href="#"><img src="https://media.giphy.com/media/l0HlKrB02QY0f1mbm/giphy.gif" alt="Just wait"></a>
+  <br>
+  <p >Your birthday will be in <%= @countdown.ceil %> day(s), <%=@name.capitalize%>.</p>
 <% end %>
